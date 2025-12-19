@@ -38,8 +38,8 @@
         ]
     };
 
-    let activeSection = 'home';
-    let mobileMenuOpen = false;
+    let activeSection = $state('home');
+    let mobileMenuOpen = $state(false);
 
     function scrollToSection(id: string) {
         const element = document.getElementById(id);
@@ -64,20 +64,20 @@
 <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-lg border-b border-slate-800">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
-            <a href="#home" on:click|preventDefault={() => scrollToSection('home')} class="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+            <a href="#home" onclick={(e) => { e.preventDefault(); scrollToSection('home'); }} class="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
                 Lin Yihang
             </a>
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-8">
-                <a href="#about" on:click|preventDefault={() => scrollToSection('about')} class="text-slate-300 hover:text-white transition-colors">Über mich</a>
-                <a href="#skills" on:click|preventDefault={() => scrollToSection('skills')} class="text-slate-300 hover:text-white transition-colors">Skills</a>
-                <a href="#projects" on:click|preventDefault={() => scrollToSection('projects')} class="text-slate-300 hover:text-white transition-colors">Projekte</a>
-                <a href="#contact" on:click|preventDefault={() => scrollToSection('contact')} class="px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors">Kontakt</a>
+                <a href="#about" onclick={(e) => { e.preventDefault(); scrollToSection('about'); }} class="text-slate-300 hover:text-white transition-colors">Über mich</a>
+                <a href="#skills" onclick={(e) => { e.preventDefault(); scrollToSection('skills'); }} class="text-slate-300 hover:text-white transition-colors">Skills</a>
+                <a href="#projects" onclick={(e) => { e.preventDefault(); scrollToSection('projects'); }} class="text-slate-300 hover:text-white transition-colors">Projekte</a>
+                <a href="#contact" onclick={(e) => { e.preventDefault(); scrollToSection('contact'); }} class="px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors">Kontakt</a>
             </div>
 
             <!-- Mobile Menu Button -->
-            <button on:click={() => mobileMenuOpen = !mobileMenuOpen} class="md:hidden text-white">
+            <button onclick={() => mobileMenuOpen = !mobileMenuOpen} class="md:hidden text-white" aria-label="Toggle mobile menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
@@ -89,10 +89,10 @@
     {#if mobileMenuOpen}
         <div class="md:hidden bg-slate-900 border-t border-slate-800">
             <div class="px-6 py-4 space-y-3">
-                <a href="#about" on:click|preventDefault={() => scrollToSection('about')} class="block text-slate-300 hover:text-white">Über mich</a>
-                <a href="#skills" on:click|preventDefault={() => scrollToSection('skills')} class="block text-slate-300 hover:text-white">Skills</a>
-                <a href="#projects" on:click|preventDefault={() => scrollToSection('projects')} class="block text-slate-300 hover:text-white">Projekte</a>
-                <a href="#contact" on:click|preventDefault={() => scrollToSection('contact')} class="block text-slate-300 hover:text-white">Kontakt</a>
+                <a href="#about" onclick={(e) => { e.preventDefault(); scrollToSection('about'); }} class="block text-slate-300 hover:text-white">Über mich</a>
+                <a href="#skills" onclick={(e) => { e.preventDefault(); scrollToSection('skills'); }} class="block text-slate-300 hover:text-white">Skills</a>
+                <a href="#projects" onclick={(e) => { e.preventDefault(); scrollToSection('projects'); }} class="block text-slate-300 hover:text-white">Projekte</a>
+                <a href="#contact" onclick={(e) => { e.preventDefault(); scrollToSection('contact'); }} class="block text-slate-300 hover:text-white">Kontakt</a>
             </div>
         </div>
     {/if}
@@ -114,10 +114,10 @@
                 Full Stack Developer & Informatik Student aus Deutschland
             </p>
             <div class="flex flex-wrap justify-center gap-4 animate-fade-in-delay">
-                <button on:click={() => scrollToSection('projects')} class="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition-all hover:scale-105">
+                <button onclick={() => scrollToSection('projects')} class="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition-all hover:scale-105">
                     Meine Projekte
                 </button>
-                <button on:click={() => scrollToSection('contact')} class="px-8 py-3 border border-slate-600 hover:border-blue-400 rounded-lg font-semibold transition-all hover:scale-105">
+                <button onclick={() => scrollToSection('contact')} class="px-8 py-3 border border-slate-600 hover:border-blue-400 rounded-lg font-semibold transition-all hover:scale-105">
                     Kontakt aufnehmen
                 </button>
             </div>
