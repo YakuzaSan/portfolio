@@ -305,7 +305,7 @@
                     <p class="text-slate-400 text-sm">Meine Open Source Projekte</p>
                 </a>
 
-                <a href="mailto:contact@lin-yihang.de" class="contact-card group">
+                <a href="mailto:contact@lin.yihang@outlook.de" class="contact-card group">
                     <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">✉️</div>
                     <h3 class="text-xl font-bold mb-2">Email</h3>
                     <p class="text-slate-400 text-sm">Direkter Kontakt</p>
