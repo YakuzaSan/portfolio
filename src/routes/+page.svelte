@@ -98,7 +98,7 @@ $c = @'
     ];
 
     let mobileMenuOpen = $state(false);
-    const nav = [['about', 'Über mich'], ['experience', 'Erfahrung'], ['skills', 'Skills'], ['projects', 'Projekte']];
+    const nav = [['about', 'Über mich'], ['experience', 'Erfahrung'], ['skills', 'Technologien'], ['projects', 'Projekte']];
 
     function go(e: Event, id: string) {
         e.preventDefault();
@@ -233,7 +233,6 @@ Cisco CCNA 200-301
     <section id="skills" class="py-24 px-6 overflow-hidden">
         <div class="max-w-6xl mx-auto">
             <h2 class="section-title">Technologien</h2>
-            <p class="text-slate-400 text-center -mt-8 mb-14">Infrastruktur zuerst, Code wenn es hilft</p>
             <div class="space-y-6">
                 {#each skillRows as row, i}
                     <div class="carousel-container">
